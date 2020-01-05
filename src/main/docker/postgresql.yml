@@ -2,8 +2,8 @@ version: '2'
 services:
   repo7-postgresql:
     image: postgres:11.6
-    # volumes:
-    #     - ~/volumes/jhipster/repo7/postgresql/:/var/lib/postgresql/data/
+    volumes:
+      - ~/volumes/jhipster/repo7/postgresql/:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=repo7
       - POSTGRES_PASSWORD=

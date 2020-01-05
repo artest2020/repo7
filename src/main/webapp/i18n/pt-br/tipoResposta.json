@@ -1,0 +1,17 @@
+{
+  "repo7App": {
+    "TipoResposta": {
+      "null": "",
+      "V_F": "V_F",
+      "TEXTO": "TEXTO",
+      "NUMERO_N": "NUMERO_N",
+      "NUMERO_Z": "NUMERO_Z",
+      "NUMERO_Q": "NUMERO_Q",
+      "NUMERO_I": "NUMERO_I",
+      "NUMERO_R": "NUMERO_R",
+      "DATA": "DATA",
+      "HORA": "HORA",
+      "DATA_HORA": "DATA_HORA"
+    }
+  }
+}

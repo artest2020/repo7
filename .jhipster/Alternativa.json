@@ -1,0 +1,35 @@
+{
+    "name": "Alternativa",
+    "fields": [
+        {
+            "fieldName": "ordem",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "frase",
+            "otherEntityRelationshipName": "alternativa",
+            "relationshipValidateRules": "required",
+            "relationshipName": "listaFrase"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "questao",
+            "otherEntityRelationshipName": "listaAlternativa",
+            "relationshipName": "questao",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200105152416",
+    "entityTableName": "alternativa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

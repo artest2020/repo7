@@ -1,0 +1,45 @@
+{
+    "name": "Resposta",
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoResposta",
+            "fieldValues": "V_F,TEXTO,NUMERO_N,NUMERO_Z,NUMERO_Q,NUMERO_I,NUMERO_R,DATA,HORA,DATA_HORA",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "valorVF",
+            "fieldType": "TipoVF",
+            "fieldValues": "V,F"
+        },
+        {
+            "fieldName": "valorTexto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valorN",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "valorZ",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "valorQ",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200105152418",
+    "entityTableName": "resposta",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

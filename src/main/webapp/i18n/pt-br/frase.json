@@ -1,0 +1,24 @@
+{
+  "repo7App": {
+    "frase": {
+      "home": {
+        "title": "Frases",
+        "createLabel": "Criar novo Frase",
+        "createOrEditLabel": "Criar ou editar Frase",
+        "notFound": "Nenhum Frase encontrado"
+      },
+      "created": "Um novo Frase foi criado com o identificador {{ param }}",
+      "updated": "Um Frase foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Frase foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Frase {{ id }}?"
+      },
+      "detail": {
+        "title": "Frase"
+      },
+      "descricao": "Descricao",
+      "verdadeira": "Verdadeira",
+      "alternativa": "Alternativa"
+    }
+  }
+}

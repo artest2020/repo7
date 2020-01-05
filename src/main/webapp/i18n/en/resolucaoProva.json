@@ -1,0 +1,23 @@
+{
+  "repo7App": {
+    "resolucaoProva": {
+      "home": {
+        "title": "Resolucao Prova",
+        "createLabel": "Create a new Resolucao Prova",
+        "createOrEditLabel": "Create or edit a Resolucao Prova",
+        "notFound": "No Resolucao Prova found"
+      },
+      "created": "A new Resolucao Prova is created with identifier {{ param }}",
+      "updated": "A Resolucao Prova is updated with identifier {{ param }}",
+      "deleted": "A Resolucao Prova is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Resolucao Prova {{ id }}?"
+      },
+      "detail": {
+        "title": "Resolucao Prova"
+      },
+      "dataHoraInicio": "Data Hora Inicio",
+      "dataHoraFim": "Data Hora Fim"
+    }
+  }
+}

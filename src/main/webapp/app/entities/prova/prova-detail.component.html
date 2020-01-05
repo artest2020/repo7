@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="prova">
+            <h2><span jhiTranslate="repo7App.prova.detail.title">Prova</span> {{prova.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="repo7App.prova.ano">Ano</span></dt>
+                <dd>
+                    <span>{{prova.ano}}</span>
+                </dd>
+                <dt><span jhiTranslate="repo7App.prova.cidade">Cidade</span></dt>
+                <dd>
+                    <span>{{prova.cidade}}</span>
+                </dd>
+                <dt><span jhiTranslate="repo7App.prova.dataHoraInicio">Data Hora Inicio</span></dt>
+                <dd>
+                    <span>{{prova.dataHoraInicio}}</span>
+                </dd>
+                <dt><span jhiTranslate="repo7App.prova.dataHoraFim">Data Hora Fim</span></dt>
+                <dd>
+                    <span>{{prova.dataHoraFim}}</span>
+                </dd>
+                <dt><span jhiTranslate="repo7App.prova.instituicao">Instituicao</span></dt>
+                <dd>
+                    <div *ngIf="prova.instituicao">
+                        <a [routerLink]="['/instituicao', prova.instituicao?.id, 'view']">{{prova.instituicao?.nome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="repo7App.prova.edital">Edital</span></dt>
+                <dd>
+                    <div *ngIf="prova.edital">
+                        <a [routerLink]="['/edital', prova.edital?.id, 'view']">{{prova.edital?.descricao}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/prova', prova.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

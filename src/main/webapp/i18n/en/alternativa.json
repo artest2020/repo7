@@ -1,0 +1,24 @@
+{
+  "repo7App": {
+    "alternativa": {
+      "home": {
+        "title": "Alternativas",
+        "createLabel": "Create a new Alternativa",
+        "createOrEditLabel": "Create or edit a Alternativa",
+        "notFound": "No Alternativas found"
+      },
+      "created": "A new Alternativa is created with identifier {{ param }}",
+      "updated": "A Alternativa is updated with identifier {{ param }}",
+      "deleted": "A Alternativa is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Alternativa {{ id }}?"
+      },
+      "detail": {
+        "title": "Alternativa"
+      },
+      "ordem": "Ordem",
+      "listaFrase": "Lista Frase",
+      "questao": "Questao"
+    }
+  }
+}

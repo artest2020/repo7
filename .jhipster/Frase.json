@@ -1,0 +1,33 @@
+{
+    "name": "Frase",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "verdadeira",
+            "fieldType": "TipoVF",
+            "fieldValues": "V,F"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "alternativa",
+            "otherEntityRelationshipName": "listaFrase",
+            "relationshipName": "alternativa",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200105152417",
+    "entityTableName": "frase",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

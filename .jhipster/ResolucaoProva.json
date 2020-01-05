@@ -1,0 +1,24 @@
+{
+    "name": "ResolucaoProva",
+    "fields": [
+        {
+            "fieldName": "dataHoraInicio",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dataHoraFim",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200105152419",
+    "entityTableName": "resolucao_prova",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

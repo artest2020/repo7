@@ -1,0 +1,23 @@
+{
+  "repo7App": {
+    "resolucaoQuestao": {
+      "home": {
+        "title": "Resolucao Questaos",
+        "createLabel": "Create a new Resolucao Questao",
+        "createOrEditLabel": "Create or edit a Resolucao Questao",
+        "notFound": "No Resolucao Questaos found"
+      },
+      "created": "A new Resolucao Questao is created with identifier {{ param }}",
+      "updated": "A Resolucao Questao is updated with identifier {{ param }}",
+      "deleted": "A Resolucao Questao is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Resolucao Questao {{ id }}?"
+      },
+      "detail": {
+        "title": "Resolucao Questao"
+      },
+      "dataHoraInicio": "Data Hora Inicio",
+      "dataHoraFim": "Data Hora Fim"
+    }
+  }
+}

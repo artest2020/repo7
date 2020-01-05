@@ -1,0 +1,60 @@
+{
+    "name": "Prova",
+    "fields": [
+        {
+            "fieldName": "ano",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cidade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataHoraInicio",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dataHoraFim",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "instituicao",
+            "otherEntityRelationshipName": "prova",
+            "relationshipValidateRules": "required",
+            "relationshipName": "instituicao",
+            "otherEntityField": "nome",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "edital",
+            "otherEntityRelationshipName": "prova",
+            "relationshipValidateRules": "required",
+            "relationshipName": "edital",
+            "otherEntityField": "descricao",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "questao",
+            "otherEntityRelationshipName": "prova",
+            "relationshipName": "listaQuestao"
+        }
+    ],
+    "changelogDate": "20200105152411",
+    "entityTableName": "prova",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

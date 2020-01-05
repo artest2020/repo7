@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="frase">
+            <h2><span jhiTranslate="repo7App.frase.detail.title">Frase</span> {{frase.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="repo7App.frase.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{frase.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="repo7App.frase.verdadeira">Verdadeira</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'repo7App.TipoVF.' + frase.verdadeira}}">{{frase.verdadeira}}</span>
+                </dd>
+                <dt><span jhiTranslate="repo7App.frase.alternativa">Alternativa</span></dt>
+                <dd>
+                    <div *ngIf="frase.alternativa">
+                        <a [routerLink]="['/alternativa', frase.alternativa?.id, 'view']">{{frase.alternativa?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/frase', frase.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

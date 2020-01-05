@@ -1,0 +1,24 @@
+{
+    "name": "ResolucaoQuestao",
+    "fields": [
+        {
+            "fieldName": "dataHoraInicio",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dataHoraFim",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200105152420",
+    "entityTableName": "resolucao_questao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

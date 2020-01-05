@@ -1,0 +1,53 @@
+{
+    "name": "Questao",
+    "fields": [
+        {
+            "fieldName": "ordem",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "enunciado",
+            "otherEntityRelationshipName": "questao",
+            "relationshipValidateRules": "required",
+            "relationshipName": "enunciado",
+            "otherEntityField": "descricao",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "pergunta",
+            "otherEntityRelationshipName": "questao",
+            "relationshipValidateRules": "required",
+            "relationshipName": "pergunta",
+            "otherEntityField": "descricao",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "alternativa",
+            "otherEntityRelationshipName": "questao",
+            "relationshipValidateRules": "required",
+            "relationshipName": "listaAlternativa"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "prova",
+            "otherEntityRelationshipName": "listaQuestao",
+            "relationshipName": "prova",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200105152413",
+    "entityTableName": "questao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

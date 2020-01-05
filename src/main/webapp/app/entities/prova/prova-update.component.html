@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-prova-heading" jhiTranslate="repo7App.prova.home.createOrEditLabel">Create or edit a Prova</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.prova.ano" for="field_ano">Ano</label>
+                    <input type="number" class="form-control" name="ano" id="field_ano"
+                           formControlName="ano"/>
+                    <div *ngIf="editForm.get('ano')!.invalid && (editForm.get('ano')!.dirty || editForm.get('ano')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ano')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('ano')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.prova.cidade" for="field_cidade">Cidade</label>
+                    <input type="text" class="form-control" name="cidade" id="field_cidade"
+                           formControlName="cidade"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.prova.dataHoraInicio" for="field_dataHoraInicio">Data Hora Inicio</label>
+                    <div class="d-flex">
+                        <input id="field_dataHoraInicio" type="datetime-local" class="form-control" name="dataHoraInicio" formControlName="dataHoraInicio" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.prova.dataHoraFim" for="field_dataHoraFim">Data Hora Fim</label>
+                    <div class="d-flex">
+                        <input id="field_dataHoraFim" type="datetime-local" class="form-control" name="dataHoraFim" formControlName="dataHoraFim" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.prova.instituicao" for="field_instituicao">Instituicao</label>
+                    <select class="form-control" id="field_instituicao" name="instituicao" formControlName="instituicao">
+                        <option *ngIf="!editForm.get('instituicao')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="instituicaoOption.id === editForm.get('instituicao')!.value?.id ? editForm.get('instituicao')!.value : instituicaoOption" *ngFor="let instituicaoOption of instituicaos; trackBy: trackById">{{instituicaoOption.nome}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('instituicao')!.invalid && (editForm.get('instituicao')!.dirty || editForm.get('instituicao')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('instituicao')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.prova.edital" for="field_edital">Edital</label>
+                    <select class="form-control" id="field_edital" name="edital" formControlName="edital">
+                        <option *ngIf="!editForm.get('edital')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="editalOption.id === editForm.get('edital')!.value?.id ? editForm.get('edital')!.value : editalOption" *ngFor="let editalOption of editals; trackBy: trackById">{{editalOption.descricao}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('edital')!.invalid && (editForm.get('edital')!.dirty || editForm.get('edital')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('edital')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

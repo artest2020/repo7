@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-resposta-heading" jhiTranslate="repo7App.resposta.home.createOrEditLabel">Create or edit a Resposta</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.resposta.tipo" for="field_tipo">Tipo</label>
+                    <select class="form-control" name="tipo" formControlName="tipo" id="field_tipo">
+                        <option value="V_F">{{'repo7App.TipoResposta.V_F' | translate}}</option>
+                        <option value="TEXTO">{{'repo7App.TipoResposta.TEXTO' | translate}}</option>
+                        <option value="NUMERO_N">{{'repo7App.TipoResposta.NUMERO_N' | translate}}</option>
+                        <option value="NUMERO_Z">{{'repo7App.TipoResposta.NUMERO_Z' | translate}}</option>
+                        <option value="NUMERO_Q">{{'repo7App.TipoResposta.NUMERO_Q' | translate}}</option>
+                        <option value="NUMERO_I">{{'repo7App.TipoResposta.NUMERO_I' | translate}}</option>
+                        <option value="NUMERO_R">{{'repo7App.TipoResposta.NUMERO_R' | translate}}</option>
+                        <option value="DATA">{{'repo7App.TipoResposta.DATA' | translate}}</option>
+                        <option value="HORA">{{'repo7App.TipoResposta.HORA' | translate}}</option>
+                        <option value="DATA_HORA">{{'repo7App.TipoResposta.DATA_HORA' | translate}}</option>
+                    </select>
+                    <div *ngIf="editForm.get('tipo')!.invalid && (editForm.get('tipo')!.dirty || editForm.get('tipo')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('tipo')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.resposta.valorVF" for="field_valorVF">Valor VF</label>
+                    <select class="form-control" name="valorVF" formControlName="valorVF" id="field_valorVF">
+                        <option value="V">{{'repo7App.TipoVF.V' | translate}}</option>
+                        <option value="F">{{'repo7App.TipoVF.F' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.resposta.valorTexto" for="field_valorTexto">Valor Texto</label>
+                    <input type="text" class="form-control" name="valorTexto" id="field_valorTexto"
+                           formControlName="valorTexto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.resposta.valorN" for="field_valorN">Valor N</label>
+                    <input type="number" class="form-control" name="valorN" id="field_valorN"
+                           formControlName="valorN"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.resposta.valorZ" for="field_valorZ">Valor Z</label>
+                    <input type="number" class="form-control" name="valorZ" id="field_valorZ"
+                           formControlName="valorZ"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.resposta.valorQ" for="field_valorQ">Valor Q</label>
+                    <input type="number" class="form-control" name="valorQ" id="field_valorQ"
+                           formControlName="valorQ"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "repo7App": {
+    "edital": {
+      "home": {
+        "title": "Editals",
+        "createLabel": "Criar novo Edital",
+        "createOrEditLabel": "Criar ou editar Edital",
+        "notFound": "Nenhum Edital encontrado"
+      },
+      "created": "Um novo Edital foi criado com o identificador {{ param }}",
+      "updated": "Um Edital foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Edital foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Edital {{ id }}?"
+      },
+      "detail": {
+        "title": "Edital"
+      },
+      "descricao": "Descricao"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "repo7App": {
+    "instituicao": {
+      "home": {
+        "title": "Instituicaos",
+        "createLabel": "Create a new Instituicao",
+        "createOrEditLabel": "Create or edit a Instituicao",
+        "notFound": "No Instituicaos found"
+      },
+      "created": "A new Instituicao is created with identifier {{ param }}",
+      "updated": "A Instituicao is updated with identifier {{ param }}",
+      "deleted": "A Instituicao is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Instituicao {{ id }}?"
+      },
+      "detail": {
+        "title": "Instituicao"
+      },
+      "nome": "Nome",
+      "sigla": "Sigla"
+    }
+  }
+}

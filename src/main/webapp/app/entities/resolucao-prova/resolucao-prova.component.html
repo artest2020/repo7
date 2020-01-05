@@ -1,0 +1,57 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="repo7App.resolucaoProva.home.title">Resolucao Prova</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-resolucao-prova" [routerLink]="['/resolucao-prova/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="repo7App.resolucaoProva.home.createLabel">
+            Create a new Resolucao Prova
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="resolucaoProva?.length === 0">
+        <span jhiTranslate="repo7App.resolucaoProva.home.notFound">No resolucaoProva found</span>
+    </div>
+    <div class="table-responsive" *ngIf="resolucaoProva?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="repo7App.resolucaoProva.dataHoraInicio">Data Hora Inicio</span></th>
+            <th scope="col" ><span jhiTranslate="repo7App.resolucaoProva.dataHoraFim">Data Hora Fim</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let resolucaoProva of resolucaoProva ;trackBy: trackId">
+                <td><a [routerLink]="['/resolucao-prova', resolucaoProva.id, 'view' ]">{{resolucaoProva.id}}</a></td>
+                <td>{{resolucaoProva.dataHoraInicio | date:'medium'}}</td>
+                <td>{{resolucaoProva.dataHoraFim | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/resolucao-prova', resolucaoProva.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/resolucao-prova', resolucaoProva.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(resolucaoProva)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

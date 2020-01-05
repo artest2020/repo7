@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="resolucaoQuestao">
+            <h2><span jhiTranslate="repo7App.resolucaoQuestao.detail.title">Resolucao Questao</span> {{resolucaoQuestao.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="repo7App.resolucaoQuestao.dataHoraInicio">Data Hora Inicio</span></dt>
+                <dd>
+                    <span>{{resolucaoQuestao.dataHoraInicio}}</span>
+                </dd>
+                <dt><span jhiTranslate="repo7App.resolucaoQuestao.dataHoraFim">Data Hora Fim</span></dt>
+                <dd>
+                    <span>{{resolucaoQuestao.dataHoraFim}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/resolucao-questao', resolucaoQuestao.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

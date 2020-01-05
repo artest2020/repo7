@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-frase-heading" jhiTranslate="repo7App.frase.home.createOrEditLabel">Create or edit a Frase</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.frase.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                           formControlName="descricao"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.frase.verdadeira" for="field_verdadeira">Verdadeira</label>
+                    <select class="form-control" name="verdadeira" formControlName="verdadeira" id="field_verdadeira">
+                        <option value="V">{{'repo7App.TipoVF.V' | translate}}</option>
+                        <option value="F">{{'repo7App.TipoVF.F' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.frase.alternativa" for="field_alternativa">Alternativa</label>
+                    <select class="form-control" id="field_alternativa" name="alternativa" formControlName="alternativa">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="alternativaOption.id === editForm.get('alternativa')!.value?.id ? editForm.get('alternativa')!.value : alternativaOption" *ngFor="let alternativaOption of alternativas; trackBy: trackById">{{alternativaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

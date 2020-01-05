@@ -1,0 +1,22 @@
+{
+  "repo7App": {
+    "enunciado": {
+      "home": {
+        "title": "Enunciados",
+        "createLabel": "Create a new Enunciado",
+        "createOrEditLabel": "Create or edit a Enunciado",
+        "notFound": "No Enunciados found"
+      },
+      "created": "A new Enunciado is created with identifier {{ param }}",
+      "updated": "A Enunciado is updated with identifier {{ param }}",
+      "deleted": "A Enunciado is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Enunciado {{ id }}?"
+      },
+      "detail": {
+        "title": "Enunciado"
+      },
+      "descricao": "Descricao"
+    }
+  }
+}

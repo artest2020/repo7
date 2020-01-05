@@ -1,0 +1,26 @@
+{
+  "repo7App": {
+    "questao": {
+      "home": {
+        "title": "Questaos",
+        "createLabel": "Criar novo Questao",
+        "createOrEditLabel": "Criar ou editar Questao",
+        "notFound": "Nenhum Questao encontrado"
+      },
+      "created": "Um novo Questao foi criado com o identificador {{ param }}",
+      "updated": "Um Questao foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Questao foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Questao {{ id }}?"
+      },
+      "detail": {
+        "title": "Questao"
+      },
+      "ordem": "Ordem",
+      "enunciado": "Enunciado",
+      "pergunta": "Pergunta",
+      "listaAlternativa": "Lista Alternativa",
+      "prova": "Prova"
+    }
+  }
+}

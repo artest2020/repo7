@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-questao-heading" jhiTranslate="repo7App.questao.home.createOrEditLabel">Create or edit a Questao</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.questao.ordem" for="field_ordem">Ordem</label>
+                    <input type="number" class="form-control" name="ordem" id="field_ordem"
+                           formControlName="ordem"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.questao.enunciado" for="field_enunciado">Enunciado</label>
+                    <select class="form-control" id="field_enunciado" name="enunciado" formControlName="enunciado">
+                        <option *ngIf="!editForm.get('enunciado')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="enunciadoOption.id === editForm.get('enunciado')!.value?.id ? editForm.get('enunciado')!.value : enunciadoOption" *ngFor="let enunciadoOption of enunciados; trackBy: trackById">{{enunciadoOption.descricao}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('enunciado')!.invalid && (editForm.get('enunciado')!.dirty || editForm.get('enunciado')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('enunciado')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.questao.pergunta" for="field_pergunta">Pergunta</label>
+                    <select class="form-control" id="field_pergunta" name="pergunta" formControlName="pergunta">
+                        <option *ngIf="!editForm.get('pergunta')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="perguntaOption.id === editForm.get('pergunta')!.value?.id ? editForm.get('pergunta')!.value : perguntaOption" *ngFor="let perguntaOption of perguntas; trackBy: trackById">{{perguntaOption.descricao}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('pergunta')!.invalid && (editForm.get('pergunta')!.dirty || editForm.get('pergunta')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('pergunta')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="repo7App.questao.prova" for="field_prova">Prova</label>
+                    <select class="form-control" id="field_prova" name="prova" formControlName="prova">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="provaOption.id === editForm.get('prova')!.value?.id ? editForm.get('prova')!.value : provaOption" *ngFor="let provaOption of prova; trackBy: trackById">{{provaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

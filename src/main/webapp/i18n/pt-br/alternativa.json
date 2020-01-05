@@ -1,0 +1,24 @@
+{
+  "repo7App": {
+    "alternativa": {
+      "home": {
+        "title": "Alternativas",
+        "createLabel": "Criar novo Alternativa",
+        "createOrEditLabel": "Criar ou editar Alternativa",
+        "notFound": "Nenhum Alternativa encontrado"
+      },
+      "created": "Um novo Alternativa foi criado com o identificador {{ param }}",
+      "updated": "Um Alternativa foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Alternativa foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Alternativa {{ id }}?"
+      },
+      "detail": {
+        "title": "Alternativa"
+      },
+      "ordem": "Ordem",
+      "listaFrase": "Lista Frase",
+      "questao": "Questao"
+    }
+  }
+}

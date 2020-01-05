@@ -1,0 +1,27 @@
+{
+  "repo7App": {
+    "resposta": {
+      "home": {
+        "title": "Respostas",
+        "createLabel": "Criar novo Resposta",
+        "createOrEditLabel": "Criar ou editar Resposta",
+        "notFound": "Nenhum Resposta encontrado"
+      },
+      "created": "Um novo Resposta foi criado com o identificador {{ param }}",
+      "updated": "Um Resposta foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Resposta foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Resposta {{ id }}?"
+      },
+      "detail": {
+        "title": "Resposta"
+      },
+      "tipo": "Tipo",
+      "valorVF": "Valor VF",
+      "valorTexto": "Valor Texto",
+      "valorN": "Valor N",
+      "valorZ": "Valor Z",
+      "valorQ": "Valor Q"
+    }
+  }
+}
